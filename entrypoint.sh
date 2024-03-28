@@ -10,8 +10,6 @@ INPUT_REPO_POLICY_FILE="${INPUT_REPO_POLICY_FILE:-repo-policy.json}"
 INPUT_IMAGE_SCANNING_CONFIGURATION="${INPUT_IMAGE_SCANNING_CONFIGURATION:-false}"
 
 function main() {
-  sanitize "${INPUT_ACCESS_KEY_ID}" "access_key_id"
-  sanitize "${INPUT_SECRET_ACCESS_KEY}" "secret_access_key"
   sanitize "${INPUT_REGION}" "region"
   sanitize "${INPUT_ACCOUNT_ID}" "account_id"
   sanitize "${INPUT_REPO}" "repo"
@@ -37,8 +35,6 @@ function sanitize() {
 }
 
 function aws_configure() {
-  export AWS_ACCESS_KEY_ID=$INPUT_ACCESS_KEY_ID
-  export AWS_SECRET_ACCESS_KEY=$INPUT_SECRET_ACCESS_KEY
   export AWS_DEFAULT_REGION=$INPUT_REGION
 }
 
