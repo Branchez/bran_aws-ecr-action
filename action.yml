@@ -1,4 +1,4 @@
-name: AWS ECR
+name: AWS ECR with assume role
 author: Branko Angelovski
 branding:
   icon: upload-cloud
